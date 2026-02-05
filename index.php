@@ -16,23 +16,21 @@
 </head>
 <body>
     <div>
-        <form action="">
+        <form method="POST" action="insert_user.php">
             <h1>Crear Usuario</h1>
 
             <input type="text" name="nombre" placeholder="Nombre ">
             <input type="text" name="apellido" placeholder="Apellido">
             <input type="text" name="usuario" placeholder="Usuario">
-            <input type="text" name="contraseña" placeholder="Contraseña">
-            <input type="text" name="email" placeholder="Email">
-
-            <input type="submit" value="Registrar" placeholder="guardar">
-            <button onclick="window.location.href='usuarios.php'">registros</button>
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="email" name="email" placeholder="Email">
+             <input type="submit" value="Registrar">
+            
+             <a href="usuarios.php" class="btn">ver registros</a>    
 
             
 
         </form>
     </div>
-
-
 </body>
 </html>

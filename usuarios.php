@@ -34,15 +34,15 @@
             <tbody>
                 <?php
                     if (mysqli_num_rows($query) > 0) {
-                        while($row = mysqli_fetch_array($query)) {
+                        while($row = mysqli_fetch_array($query)) {  
                 ?>
 
                 <tr>
                 
                 <td><?php echo $row['id']; ?></td>
-                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['nombre']; ?></td>
                 <td><?php echo $row['apellido']; ?></td>
-                <td><?php echo $row['username']; ?></td>
+                <td><?php echo $row['usuario']; ?></td>
                 <td><?php echo $row['contraseña']; ?></td>
                 <td><?php echo $row['email']; ?></td>
 
