@@ -12,11 +12,12 @@ $contraseña = $_POST['contraseña'];
 $email = $_POST['email'];
 
 
-$sql = "INSERT INTO users ('id', 'nombre', 'apellido', 'usuario', 'contraseña', 'email')
+$sql = "INSERT INTO users (id, nombre, apellido, usuario, contraseña, email)
                 VALUES (NULL, '$nombre', '$apellido', '$usuario', '$contraseña', '$email')";
 
-if($query){
-    Header("location: index.php");
-}
+$query = mysqli_query($conn, $sql);
 
+if($query){
+    Header("location: crear_usuarios.php");
+}
 ?>
