@@ -18,17 +18,22 @@
                 <input type="password" required name="password" placeholder="Contraseña">
                 <label>contraseña del usuario</label>
             </div>
+            <div class="field">
+                <select name="role_id" id="role_id">
+                    <option value="1">Administrador</option>
+                    <option value="2">Usuario</option>
+                    <option value="3">Invitado</option>
+                </select>
+                <label for="role_id">Selecciona tu rol</label>
+            </div>
             <div class="content">
-                <div class="checkbox">
-                    <input type="checkbox" id="remenber-me">
-                    <label for="remenber-me">Recordarme</label> 
-                </div>
-                <div class="pass-link"><a href="#">Olvido Su Contraseña</a></div>
             </div>
             <div class="field">
-                <input type="submit" value="Iniciar Sesion">
+                <input type="submit" value="Registrarse">
             </div>
-            <div class="signup-link"><a href="registrarse.php">Registrate ahora</a></div>
+            <div class="signup-link">
+                Ya tienes una cuenta? <a href="index.php">Inicia sesion ahora</a>
+            </div>
         </form>
     </div>
 </body>
