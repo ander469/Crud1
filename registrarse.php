@@ -9,7 +9,7 @@
 <body>
     <div class="wrape">
         <div class="title">Iniciar Sesion </div>
-        <form action="InicioSesion/InicioSesion.php" method="POST">
+        <form action="Inicio/InicioSesion.php" method="POST">
             <div class="field">
                 <input type="text" required name="username" placeholder="Correo Electronico">
                 <label for="username">correo del usuario</label>
