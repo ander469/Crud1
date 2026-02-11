@@ -8,7 +8,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role_id'] != 3) { // Suponiendo 
 }
 
 // Conectar a la base de datos
-require_once 'conexion.php';
+require_once '../crud1/config/Conection.php';
 $connection = new Connection();
 $pdo = $connection->connect();
 
@@ -31,7 +31,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2>Secretaria</h2>
         <a href="secretary_dashboard.php">Inicio</a>
         <a href="register.php">Agregar Usuario</a>
-        <a href="../InicioSesion/CerrarSesion.php">Cerrar sesión</a>
+        <a href="/InicioSesion/CerrarSesion.php">Cerrar sesión</a>
     </div>
     <div class="main-content">
         <div class="header">
