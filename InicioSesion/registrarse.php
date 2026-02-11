@@ -1,5 +1,5 @@
 <?php
-require_once "../config/Conection.php";
+require_once "../config/Connection.php";
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conection = new Connection();
         $pdo = $conection->connect();
 
-        $sql = "INSERT INTO users (username, password, role_id) VALUES (:username, :password, :role_id)";
+        $sql = "INSERT INTO usuarios (username, password, role_id) VALUES (:username, :password, :role_id)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'username' => $username,

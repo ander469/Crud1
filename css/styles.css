@@ -129,8 +129,6 @@ form .pass-link a:hover,
 form .signup-link a:hover{
   text-decoration: underline;
 }
-
-
 /* Estilos generales */
 .wrapper form .field {
     height: 50px;

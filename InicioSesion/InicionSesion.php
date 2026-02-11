@@ -1,13 +1,14 @@
 <?php
-require_once __DIR__ . '/../config/Conection.php';
+require_once __DIR__ . '/../config/Connection.php';
 session_start();
+
 
 // Si ya hay sesión activa, redirige según su rol
 if (isset($_SESSION['user_id'])) {
     if ($_SESSION['role_id'] == 1) {
         header('Location: ../home/dashboard.php');
     } elseif ($_SESSION['role_id'] == 3) {
-        header('Location: ../home/dashboard.php');
+        header('Location: ../home/dashboardusers.php');
     }
     exit();
 }

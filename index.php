@@ -4,9 +4,9 @@ session_start();
 // Si el usuario ya está autenticado, redirigir según su rol
 if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
     if ($_SESSION['role_id'] == 1) {
-        header('location:'); // Admin
+        header('Location: home/dashboard.php'); // Admin
     } elseif ($_SESSION['role_id'] == 3) {
-        header('Location: dashboardusers.php'); // Usuario normal
+        header('Location :/dashboardusers.php'); // Usuario normal
     }
     exit; // Detener la ejecución después de redirigir
 }
@@ -22,8 +22,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
 <body>
     <div class="wrape">
         <div class="title">Iniciar Sesión</div>
-
-        <!-- Mostrar mensaje de error si existe (por ejemplo, desde la URL) -->
         <?php if (isset($_GET['error'])): ?>
             <div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin-bottom: 15px; border-left: 4px solid #f5c6cb;">
                 <?php echo htmlspecialchars($_GET['error']); ?>
@@ -48,9 +46,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
             <div class="field">
                 <input type="submit" value="Iniciar Sesión">
             </div>
-            <div class="signup-link">
-                ¿No tienes cuenta? <a href="registrarse.php">Regístrate aquí</a>
-            </div>
+            <div class="signup-link">¿No tienes cuenta? <a href="registrarse.php">Regístrate aquí</a></div>
         </form>
     </div>
 </body>

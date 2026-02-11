@@ -3,13 +3,18 @@ session_start();
 
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION['username'])) {
-    header('location:index.php');
+    header('Location: ../index.php');
     exit;
 }
 
-// Verifica el rol del usuario
-if ($_SESSION['role_id'] !== 1) {
-    echo "Acceso denegado. Solo los administradores pueden acceder a esta página.";
+// Verifica que el rol sea administrador (1)
+if ($_SESSION['role_id'] != 1) {
+    // Si no es admin, redirige a su panel correspondiente o al login
+    if ($_SESSION['role_id'] == 3) {
+        header('Location: dashboardusers.php');
+    } else {
+        header('Location: ../index.php');
+    }
     exit;
 }
 ?>
@@ -31,7 +36,7 @@ if ($_SESSION['role_id'] !== 1) {
         <a href="#">Estadísticas</a>
         <a href="#">Informes</a>
         <a href="#">Configuración</a>
-        <a href="InicioSesion/CerrarSesion.php">Cerrar sesión</a>
+        <a href="../InicioSesion/CerrarSesion.php">Cerrar sesión</a>
     </div>
     <div class="main">
         <h1>Bienvenido al Dashboard</h1>
