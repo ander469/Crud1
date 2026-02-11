@@ -1,13 +1,13 @@
 <?php
-require_once '../crud1/config/Conection.php';
+require_once __DIR__ . '/../config/Conection.php';
 session_start();
 
 // Si ya hay sesión activa, redirige según su rol
 if (isset($_SESSION['user_id'])) {
     if ($_SESSION['role_id'] == 1) {
-        header('/home/dashboard.php');
+        header('Location: ../home/dashboard.php');
     } elseif ($_SESSION['role_id'] == 3) {
-        header('/home/dashboardusers.php');
+        header('Location: ../home/dashboard.php');
     }
     exit();
 }
@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Redirigir según el rol
                 if ($user['role_id'] == 1) {
-                    header('/home/dashboard.php');
+                    header('Location: ../home/dashboard.php');
                 } elseif ($user['role_id'] == 3) {
-                    header('/home/dashboardusers.php');
+                    header('Location: ../home/dashboardusers.php');
                 } else {
                     $error_message = 'Rol no reconocido';
                 }
@@ -58,36 +58,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-</head>
-<body>
-    <div class="login-box">
-        <h2>Iniciar Sesión</h2>
-        
-        <?php if (!empty($error_message)): ?>
-            <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
-        <?php endif; ?>
-        
-        <form method="POST" action="">
-            <div class="textbox">
-                <label>Usuario:</label>
-                <input type="text" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" required>
-            </div>
-            <div class="textbox">
-                <label>Contraseña:</label>
-                <input type="password" name="password" required>
-            </div>
-            <button type="submit" class="btn">Ingresar</button>
-        </form>
-        <div class="register-link">
-            ¿No tienes cuenta? <a href="registro.php">Regístrate</a>
-        </div>
-    </div>
-</body>
-</html>

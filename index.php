@@ -4,7 +4,7 @@ session_start();
 // Si el usuario ya está autenticado, redirigir según su rol
 if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
     if ($_SESSION['role_id'] == 1) {
-        header('Location: dashboard.php'); // Admin
+        header('location:'); // Admin
     } elseif ($_SESSION['role_id'] == 3) {
         header('Location: dashboardusers.php'); // Usuario normal
     }
@@ -29,7 +29,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
                 <?php echo htmlspecialchars($_GET['error']); ?>
             </div>
         <?php endif; ?>
-        <form action="/InicioSesion/InicionSesion.php" method="POST">
+        <form action="InicioSesion/InicionSesion.php" method="POST">
             <div class="field">
                 <label for="username">Correo Electrónico</label>
                 <input type="text" id="username" name="username" required placeholder="ejemplo@correo.com">
@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
                 <input type="submit" value="Iniciar Sesión">
             </div>
             <div class="signup-link">
-                ¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a>
+                ¿No tienes cuenta? <a href="registrarse.php">Regístrate aquí</a>
             </div>
         </form>
     </div>

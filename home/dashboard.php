@@ -13,6 +13,8 @@ if ($_SESSION['role_id'] !== 1) {
     exit;
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +31,7 @@ if ($_SESSION['role_id'] !== 1) {
         <a href="#">Estadísticas</a>
         <a href="#">Informes</a>
         <a href="#">Configuración</a>
-        <a href="/InicioSesion/CerrarSesion.php">Cerrar sesión</a>
+        <a href="InicioSesion/CerrarSesion.php">Cerrar sesión</a>
     </div>
     <div class="main">
         <h1>Bienvenido al Dashboard</h1>
