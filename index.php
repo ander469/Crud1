@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
                 <?php echo htmlspecialchars($_GET['error']); ?>
             </div>
         <?php endif; ?>
-        <form action="Inicio/InicionSesion.php" method="POST">
+        <form action="Inicio/Iniciosesion.php" method="POST">
 
             <div class="field">
                 <input type="text" id="username" name="username" required placeholder="ejemplo@correo.com">
@@ -41,7 +41,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role_id'])) {
 
             <div class="content">
                 <div class="checkbox">
-                    <input type="checkbox" id="remember-me" name="remember">
+                    <input type="checkbox" id="remember-me" name="remember-me">
                     <label for="remember-me">Recordarme</label> 
                 </div>
 

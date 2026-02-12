@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . 'Connection.php';
 session_start();
 
 // Verifica si el usuario ha iniciado sesión
@@ -18,8 +19,6 @@ if ($_SESSION['role_id'] != 1) {
     exit;
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
